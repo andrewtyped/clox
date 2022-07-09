@@ -17,11 +17,11 @@ FILES=("memory" \
        "main")
 
 for f in ${FILES[@]}; do
-    gcc -c "$SRC_DIR/$f.c" -o "$OBJ_DIR/$f.o" -Wall
+    gcc -c -Wall -g -o "$OBJ_DIR/$f.o" "$SRC_DIR/$f.c" 
 done
 
 OBJFILES=$(for f in ${FILES[@]}; do echo "$OBJ_DIR/$f.o"; done)
 
 echo $OBJFILES
 
-gcc $OBJFILES -o $OUT_FILE -Wall
+gcc -g -o $OUT_FILE $OBJFILES 
