@@ -1,3 +1,9 @@
 add_executable(cloxtest main.c)
 
-target_link_libraries(cloxtest LINK_PUBLIC cloxlib)
+target_link_libraries(cloxtest LINK_PUBLIC 
+    cloxlib 
+    unitytest)
+#target_link_libraries(cloxtest LINK_STATIC unitytest)
+
+add_test(NAME cloxtest_suite 
+         COMMAND $<TARGET_FILE:cloxtest>)

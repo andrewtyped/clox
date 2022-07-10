@@ -1,13 +1,20 @@
 #include "../src/common.h"
 #include "../src/chunk.h"
+#include <unity.h>
+
+void setUp() {}
+void tearDown() {}
+
+void test_Unity(void)
+{
+    TEST_ASSERT_EQUAL_UINT8(1,1);
+    TEST_ASSERT_EQUAL_UINT8(1,2);
+}
 
 int main(int argc, const char* argv[]) {
-    Chunk chunk;
-    initChunk(&chunk);
-    writeChunk(&chunk, OP_RETURN);
-    freeChunk(&chunk);
+    UNITY_BEGIN();
 
-    printf("hello world");
-
-    return 0;
+    RUN_TEST(test_Unity);
+    
+    return UNITY_END();
 }

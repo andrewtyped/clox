@@ -1,0 +1,5 @@
+add_library (unitytest STATIC unity.c)
+
+target_include_directories(unitytest 
+    PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR})
