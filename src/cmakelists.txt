@@ -1,0 +1,10 @@
+add_library (cloxlib 
+    chunk.c 
+    memory.c)
+
+target_include_directories(cloxlib 
+    PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR})
+
+add_executable(clox main.c)
+target_link_libraries(clox LINK_PUBLIC cloxlib)
