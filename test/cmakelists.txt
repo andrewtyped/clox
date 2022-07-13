@@ -1,9 +1,30 @@
-add_executable(cloxtest main.c)
+# CLOX TESTS
+# ==========
 
-target_link_libraries(cloxtest LINK_PUBLIC 
-    cloxlib 
-    unitytest)
-#target_link_libraries(cloxtest LINK_STATIC unitytest)
 
-add_test(NAME cloxtest_suite 
-         COMMAND $<TARGET_FILE:cloxtest>)
+# chunkTest Tests
+# ----------------------------------------
+
+add_executable(chunkTest chunkTest.c)
+
+target_link_libraries(chunkTest LINK_PUBLIC cloxlib unitytest)
+
+#Adding test this way because the main cmakelist overrides some of the output directory variables,
+#which interferes with add_test unless we specify it this way.
+add_test(NAME chunkTest_suite 
+         COMMAND $<TARGET_FILE:chunkTest>)
+
+
+# main Tests
+# ----------------------------------------
+
+add_executable(main main.c)
+
+target_link_libraries(main LINK_PUBLIC cloxlib unitytest)
+
+#Adding test this way because the main cmakelist overrides some of the output directory variables,
+#which interferes with add_test unless we specify it this way.
+add_test(NAME main_suite 
+         COMMAND $<TARGET_FILE:main>)
+
+
