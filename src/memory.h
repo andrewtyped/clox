@@ -3,11 +3,13 @@
 
 #include "common.h"
 
+#define INITIAL_CAPACITY 8
+
 #define FREE_ARRAY(type, pointer, oldCount) \
     reallocate(pointer, sizeof(type) * (oldCount), 0)
 
 #define GROW_CAPACITY(capacity) \
-    ((capacity) < 8 ? 8 : (capacity) * 2)
+    ((capacity) < INITIAL_CAPACITY ? INITIAL_CAPACITY : (capacity) * 2)
 
 #define GROW_ARRAY(type, pointer, oldCount, newCount) \
     (type*)reallocate(pointer, sizeof(type) * (oldCount), \
