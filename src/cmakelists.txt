@@ -1,6 +1,7 @@
 add_library (cloxlib 
     chunk.c 
-    memory.c)
+    memory.c
+    debug.c)
 
 target_include_directories(cloxlib 
     PUBLIC
