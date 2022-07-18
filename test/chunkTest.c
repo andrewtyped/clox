@@ -25,14 +25,16 @@ void assert_chunk_empty(Chunk* actual) {
     TEST_ASSERT_EQUAL_INT_MESSAGE(0, actual->capacity, "Bad Capacity");
     TEST_ASSERT_EQUAL_INT_MESSAGE(0, actual->count, "Bad Count");
     TEST_ASSERT_NULL_MESSAGE(actual->code, "code should be null");
+    TEST_ASSERT_NULL_MESSAGE(actual->lines, "line should be null");
+    TEST_ASSERT_NULL_MESSAGE((&actual->constants)->values, "constants.values should be null");
 }
 
 void test_chunk_accepts_data(void)
 {
     Chunk chunk;
     initChunk(&chunk);
-    writeChunk(&chunk, 1);
-    writeChunk(&chunk, 2);
+    writeChunk(&chunk, 1,0);
+    writeChunk(&chunk, 2,1);
 
     uint8_t expectedData[] = {1, 2};
 
