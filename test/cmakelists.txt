@@ -28,3 +28,16 @@ add_test(NAME main_suite
          COMMAND $<TARGET_FILE:main>)
 
 
+# valueTest Tests
+# ----------------------------------------
+
+add_executable(valueTest valueTest.c)
+
+target_link_libraries(valueTest LINK_PUBLIC cloxlib unitytest)
+
+#Adding test this way because the main cmakelist overrides some of the output directory variables,
+#which interferes with add_test unless we specify it this way.
+add_test(NAME valueTest_suite 
+         COMMAND $<TARGET_FILE:valueTest>)
+
+
