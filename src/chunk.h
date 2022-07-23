@@ -13,7 +13,17 @@ typedef struct {
     int count;
     int capacity;
     uint8_t* code;
+
+    /**
+     * @brief Stores the line number for each instruction in the chunk.
+     * 
+     */
     int* lines;
+
+    /**
+     * @brief Stores literal values
+     * contained in this chunk.
+     */
     ValueArray constants;
 } Chunk;
 
