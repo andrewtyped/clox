@@ -39,3 +39,36 @@ int addConstant(Chunk* chunk, Value value) {
     writeValueArray(&chunk->constants, value);
     return chunk->constants.count - 1;
 }
+
+void writeConstant(Chunk* chunk, 
+                   Value value, 
+                   int line) {
+    int constantIndex = addConstant(chunk, value);
+
+    bool isLongConstant = constantIndex > UINT8_MAX_VALUE 
+        ? true
+        : false;
+
+    if(isLongConstant) {
+        //Our long constant is assumed to be 24 bits - three operands (one byte each).
+
+        //mask the lower 4 bits. Shift masked value right 16 bits to fit into 8 bits.
+        uint8_t operand1 = ((unsigned)constantIndex & 0x00ff0000) >> 16;
+
+        //mask the upper 2 and lower 2 bits. Shift masked value right 8 bits to fit into 8 bits.
+        uint8_t operand2 = ((unsigned)constantIndex & 0x0000ff00) >> 8;
+
+        //mask the upper 4 bits. No shifting required.
+        uint8_t operand3 = (unsigned)constantIndex & 0x000000ff;
+
+        writeChunk(chunk, OP_CONSTANT_LONG, line);
+        writeChunk(chunk, operand1, line);
+        writeChunk(chunk, operand2, line);
+        writeChunk(chunk, operand3, line);
+    } else {
+        writeChunk(chunk, OP_CONSTANT, line);
+        writeChunk(chunk, constantIndex, line);
+    }
+
+
+                   }

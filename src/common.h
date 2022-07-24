@@ -5,4 +5,6 @@
 #include <stddef.h>
 #include <stdint.h>
 
+#define UINT8_MAX_VALUE 256
+
 #endif
