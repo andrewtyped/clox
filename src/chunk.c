@@ -50,6 +50,8 @@ void writeConstant(Chunk* chunk,
         : false;
 
     if(isLongConstant) {
+        //TODO: This can probably be refactored into a better utility.
+
         //Our long constant is assumed to be 24 bits - three operands (one byte each).
 
         //mask the lower 4 bits. Shift masked value right 16 bits to fit into 8 bits.

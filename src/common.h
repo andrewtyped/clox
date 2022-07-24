@@ -6,5 +6,6 @@
 #include <stdint.h>
 
 #define UINT8_MAX_VALUE 256
+#define DEBUG_TRACE_EXECUTION
 
 #endif

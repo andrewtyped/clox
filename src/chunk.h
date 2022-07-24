@@ -22,6 +22,7 @@ typedef struct {
     /**
      * @brief Stores the line number for each instruction in the chunk.
      * 
+     * TODO: Use run-length encoding to improve space usage for line number tracking. (See ch. 14 challenges).
      */
     int* lines;
 
