@@ -61,7 +61,7 @@ void freeVM();
 /**
  * @brief Executes the code instructions in a chunk.
  */
-InterpretResult interpret(Chunk* chunk);
+InterpretResult interpret(const char* source);
 
 void push(Value value);
 Value pop();

@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 #include "common.h"
+#include "compiler.h"
 #include "debug.h"
 #include "value.h"
 #include "vm.h"
@@ -33,6 +34,7 @@ Value pop() {
  * 
  * @return InterpretResult 
  */
+ /* Reinstate once we need to call run again
 static InterpretResult run() {
     #define READ_BYTE() (*vm.ip++)
     #define READ_CONSTANT() (vm.chunk->constants.values[READ_BYTE()])
@@ -91,9 +93,9 @@ static InterpretResult run() {
     #undef READ_CONSTANT
     
 }
+*/
 
-InterpretResult interpret(Chunk* chunk) {
-    vm.chunk = chunk;
-    vm.ip = vm.chunk->code;
-    return run();
+InterpretResult interpret(const char* source) {
+    compile(source);
+    return INTERPRET_OK;
 }
