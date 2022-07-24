@@ -36,3 +36,35 @@ Performs unary negation on the value on top of the stack.
 
 OpCode: 0x03
 Operands: None
+
+OP_ADD
+------
+
+Performs binary addition of the two elements on top of the stack. The first operand is top of stack. Second operand is next element down.
+
+OpCode: 0x04
+Operands: None
+
+OP_SUBTRACT
+-----------
+
+Performs binary subtraction of the two elements on top of the stack. The first operand is top of stack. Second operand is next element down.
+
+OpCode: 0x05
+Operands: None
+
+OP_MULTIPLY
+-----------
+
+Performs binary multiplication of the two elements on top of the stack. The first operand is top of stack. Second operand is next element down.
+
+OpCode: 0x06
+Operands: None
+
+OP_DIVIDE
+---------
+
+Performs divide addition of the two elements on top of the stack. The first operand is top of stack. Second operand is next element down.
+
+OpCode: 0x07
+Operands: None
