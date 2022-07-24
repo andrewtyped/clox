@@ -65,6 +65,10 @@ static InterpretResult run() {
                     printf("YOU FORGOT TO IMPLEMENT OP_CONSTANT_LONG");
                     break;
                 }
+                case OP_NEGATE: {
+                    push(-pop());
+                    break;
+                }
                 case OP_RETURN: {
                     printValue(pop());
                     printf("\n");

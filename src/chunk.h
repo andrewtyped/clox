@@ -11,7 +11,8 @@
 typedef enum {
     OP_CONSTANT = 0x00,
     OP_CONSTANT_LONG = 0x01,
-    OP_RETURN = 0x02
+    OP_RETURN = 0x02,
+    OP_NEGATE = 0x03
 } OpCode;
 
 typedef struct {

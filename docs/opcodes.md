@@ -28,3 +28,11 @@ OP_RETURN
 
 OpCode: 0x02
 Operands: None
+
+OP_NEGATE
+---------
+
+Performs unary negation on the value on top of the stack.
+
+OpCode: 0x03
+Operands: None
