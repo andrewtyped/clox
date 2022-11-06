@@ -92,3 +92,35 @@ Pushes a false value onto the stack.
 
 OpCode: 0x0A
 Operands: None
+
+OP_NOT
+--------
+
+Logically negate the value on top of the stack.
+
+OpCode: 0x0B
+Operands: None
+
+OP_EQUAL
+--------
+
+Compares the two values on top of the stack. If they are equal, pushes true onto the stack. Otherwise, pushes false onto the stack.
+
+OpCode: 0x0C
+Operands: None
+
+OP_GREATER
+--------
+
+Compares the two values on top of the stack. If the top value is greater than the penultimate value, pushes true onto the stack. Otherwise, pushes false onto the stack.
+
+OpCode: 0x0D
+Operands: None
+
+OP_LESS
+--------
+
+Compares the two values on top of the stack. If the top value is less than the penultimate value, pushes true onto the stack. Otherwise, pushes false onto the stack.
+
+OpCode: 0x0E
+Operands: None

@@ -19,7 +19,11 @@ typedef enum {
     OP_DIVIDE = 0x07,
     OP_NIL = 0x08,
     OP_TRUE = 0x09,
-    OP_FALSE = 0x0A
+    OP_FALSE = 0x0A,
+    OP_NOT = 0x0B,
+    OP_EQUAL = 0x0C,
+    OP_GREATER = 0x0D,
+    OP_LESS = 0x0E
 } OpCode;
 
 typedef struct {
