@@ -17,6 +17,9 @@ typedef enum {
     OP_SUBTRACT = 0x05,
     OP_MULTIPLY = 0x06,
     OP_DIVIDE = 0x07,
+    OP_NIL = 0x08,
+    OP_TRUE = 0x09,
+    OP_FALSE = 0x0A
 } OpCode;
 
 typedef struct {

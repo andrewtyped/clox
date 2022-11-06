@@ -68,3 +68,27 @@ Performs divide addition of the two elements on top of the stack. The first oper
 
 OpCode: 0x07
 Operands: None
+
+OP_NIL
+------
+
+Pushes a nil value onto the stack.
+
+OpCode: 0x08
+Operands: None
+
+OP_TRUE
+-------
+
+Pushes a true value onto the stack.
+
+OpCode: 0x09
+Operands: None
+
+OP_FALSE
+--------
+
+Pushes a false value onto the stack.
+
+OpCode: 0x0A
+Operands: None
