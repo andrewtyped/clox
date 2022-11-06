@@ -170,7 +170,7 @@ static void grouping() {
 static void number() {
     //strtod - c std lib function converting a string to a double. 
     double value = strtod(parser.previous.start, NULL);
-    emitConstant(value);
+    emitConstant(NUMBER_VAL(value));
 }
 
 static void unary() {

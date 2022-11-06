@@ -17,8 +17,8 @@ void assert_valuearray_data(Value* expectedData,
 
         for(int i = 0; i < expectedCount; i++) {
             //Access the array values at the current index.
-            double expectedDataPoint = *(expectedData + sizeof(double) * i);
-            double actualDataPoint = *(actual->values + sizeof(double) * i);
+            double expectedDataPoint = (*(expectedData + sizeof(Value) * i)).as.number;
+            double actualDataPoint = (*(actual->values + sizeof(Value) * i)).as.number;
 
             TEST_ASSERT_EQUAL_DOUBLE(expectedDataPoint, actualDataPoint);
         }
@@ -34,13 +34,13 @@ void test_valuearray_accepts_data(void)
 {
     ValueArray valueArray;
     initValueArray(&valueArray);
-    writeValueArray(&valueArray, 1.0);
-    writeValueArray(&valueArray, 2.0);
+    writeValueArray(&valueArray, NUMBER_VAL(1.0));
+    writeValueArray(&valueArray, NUMBER_VAL(2.0));
 
     int size = 2;
     Value *expectedData = (Value *)malloc(size * sizeof(Value));
-    expectedData[0] = 1.0L;
-    expectedData[1] = 2.0L;
+    expectedData[0] = NUMBER_VAL(1.0L);
+    expectedData[1] = NUMBER_VAL(2.0L);
 
     assert_valuearray_data(expectedData, INITIAL_CAPACITY, 2, &valueArray);
 
