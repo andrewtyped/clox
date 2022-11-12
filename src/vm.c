@@ -31,9 +31,11 @@ static void runtimeError(const char* format, ...) {
 
 void initVM() {
     resetStack();
+    vm.objects = NULL;
 }
 
 void freeVM() {
+    freeObjects();
 }
 
 void push(Value value) {
@@ -139,8 +141,8 @@ static InterpretResult run() {
                         );
                         return INTERPRET_RUNTIME_ERROR;
                     }
+                    break;
                 }
-                break;
                 case OP_SUBTRACT: BINARY_OP(NUMBER_VAL, -); break;
                 case OP_MULTIPLY: BINARY_OP(NUMBER_VAL, *); break;
                 case OP_DIVIDE: BINARY_OP(NUMBER_VAL, /); break;
