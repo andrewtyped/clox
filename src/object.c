@@ -22,9 +22,23 @@ static ObjString* allocateString(char* chars, int length) {
     return string;
 }
 
+//Use when you know you can assume ownership of the memory holding the string. Like during concatenation.
+ObjString* takeString(char* chars, int length) {
+    return allocateString(chars, length);
+}
+
+//Use when you need to copy the chars into new memory, because you don't own the memory for chars.
 ObjString* copyString(const char* chars, int length) {
     char* heapChars = ALLOCATE(char, length + 1);
     memcpy(heapChars, chars, length);
     heapChars[length] = '\0';
     return allocateString(heapChars, length);
+}
+
+void printObject(Value value) {
+    switch (OBJ_TYPE(value)) {
+        case OBJ_STRING:
+            printf("%s", AS_CSTRING(value));
+            break;
+    }
 }
