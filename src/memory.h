@@ -5,6 +5,9 @@
 
 #define INITIAL_CAPACITY 8
 
+#define ALLOCATE(type, count) \
+    (type*)reallocate(NULL,0, sizeof(type) * (count))
+
 #define FREE_ARRAY(type, pointer, oldCount) \
     reallocate(pointer, sizeof(type) * (oldCount), 0)
 
