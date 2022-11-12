@@ -34,6 +34,12 @@ typedef struct {
      * 
      */
     Value* stackTop;
+
+/**
+ * @brief Points to the head of a list containing all objects allocated in the program.
+ * 
+ */
+    Obj* objects;
 } VM;
 
 /**
@@ -45,6 +51,8 @@ typedef enum {
     INTERPRET_COMPILE_ERROR,
     INTERPRET_RUNTIME_ERROR
 } InterpretResult;
+
+extern VM vm;
 
 /**
  * @brief Allocates resources for the global vm instance.
