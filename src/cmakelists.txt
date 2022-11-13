@@ -5,6 +5,7 @@ add_library (cloxlib
     memory.c
     scanner.c
     object.c
+    table.c
     value.c
     vm.c)
 
