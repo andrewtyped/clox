@@ -2,6 +2,7 @@
 #define clox_vm_h
 
 #include "chunk.h"
+#include "table.h"
 #include "value.h"
 
 /**
@@ -34,6 +35,12 @@ typedef struct {
      * 
      */
     Value* stackTop;
+
+    /**
+     * @brief Keep a hash table of distinct strings in the program for interning.
+     * 
+     */
+    Table strings;
 
 /**
  * @brief Points to the head of a list containing all objects allocated in the program.
