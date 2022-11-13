@@ -124,3 +124,11 @@ Compares the two values on top of the stack. If the top value is less than the p
 
 OpCode: 0x0E
 Operands: None
+
+OP_PRINT
+--------
+
+Evaluates an expression and writes its result to stdout.
+
+OpCode: 0x0F
+Operands: None
