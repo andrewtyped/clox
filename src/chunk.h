@@ -25,7 +25,8 @@ typedef enum {
     OP_GREATER = 0x0D,
     OP_LESS = 0x0E,
     OP_PRINT = 0x0F,
-    OP_POP = 0x10
+    OP_POP = 0x10,
+    OP_DEFINE_GLOBAL = 0x11
 } OpCode;
 
 typedef struct {

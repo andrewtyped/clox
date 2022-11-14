@@ -37,6 +37,12 @@ typedef struct {
     Value* stackTop;
 
     /**
+     * @brief Keep a hash table of global variable names and their values.
+     * 
+     */
+    Table globals;
+
+    /**
      * @brief Keep a hash table of distinct strings in the program for interning.
      * 
      */

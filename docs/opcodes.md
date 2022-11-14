@@ -140,3 +140,12 @@ Pop the top value off the stack. This effectively discards the value.
 
 OpCode: 0x10
 Operands: None
+
+OP_DEFINE_GLOBAL
+------
+
+Defines a new global variable.
+
+OpCode: 0x11
+Operands:
+    - 0: Index of the constant holding the variable's name.
