@@ -132,3 +132,11 @@ Evaluates an expression and writes its result to stdout.
 
 OpCode: 0x0F
 Operands: None
+
+OP_POP
+------
+
+Pop the top value off the stack. This effectively discards the value.
+
+OpCode: 0x10
+Operands: None

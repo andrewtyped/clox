@@ -123,6 +123,7 @@ static InterpretResult run() {
                     push(BOOL_VAL(valuesEqual(a,b)));
                     break;
                 }
+                case OP_POP: pop(); break;
                 case OP_CONSTANT_LONG: {
                     //TODO: implement this
                     printf("YOU FORGOT TO IMPLEMENT OP_CONSTANT_LONG");
