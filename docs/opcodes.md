@@ -149,3 +149,12 @@ Defines a new global variable.
 OpCode: 0x11
 Operands:
     - 0: Index of the constant holding the variable's name.
+
+OP_GET_GLOBAL
+-------------
+
+Gets the value of a global variable.
+
+OpCode: 0x12
+Operants:
+    - 0: Index of the constant holding the variable's name;
