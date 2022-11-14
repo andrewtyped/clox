@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.16)
 #Specify C Standard
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED True)
+set(CMAKE_BUILD_TYPE Debug)
 
 # set the project name
 project(clox C)
