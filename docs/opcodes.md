@@ -158,3 +158,12 @@ Gets the value of a global variable.
 OpCode: 0x12
 Operants:
     - 0: Index of the constant holding the variable's name;
+
+OP_SET_GLOBAL
+-------------
+
+Sets the value of a global variable.
+
+OpCode: 0x13
+Operants:
+    - 0: Index of the constant holding the variable's name;
