@@ -167,3 +167,21 @@ Sets the value of a global variable.
 OpCode: 0x13
 Operants:
     - 0: Index of the constant holding the variable's name;
+
+OP_GET_LOCAL
+-------------
+
+Gets the value of a local variable by pushing the value of the stack slot where the local was defined on top of the stack.
+
+OpCode: 0x14
+Operants:
+    - 0: Index of the stack slot hosting the local.
+
+OP_SET_LOCAL
+-------------
+
+Sets the value of a local variable by modifying the value of the stack slot hosting the variable.
+
+OpCode: 0x15
+Operants:
+    - 0: Index of the stack slot hosting the local.

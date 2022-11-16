@@ -28,7 +28,9 @@ typedef enum {
     OP_POP = 0x10,
     OP_DEFINE_GLOBAL = 0x11,
     OP_GET_GLOBAL = 0x12,
-    OP_SET_GLOBAL = 0x13
+    OP_SET_GLOBAL = 0x13,
+    OP_GET_LOCAL = 0x14,
+    OP_SET_LOCAL = 0x15
 } OpCode;
 
 typedef struct {
