@@ -185,3 +185,23 @@ Sets the value of a local variable by modifying the value of the stack slot host
 OpCode: 0x15
 Operants:
     - 0: Index of the stack slot hosting the local.
+
+OP_JUMP_IF_FALSE
+----------------
+
+Moves the instruction pointer if the value on top of the stack is falsey.
+
+OpCode: 0x16
+Operands:
+    - 0: The number of bytes to jump (high byte)
+    - 1: The number of bytes to jump (low byte)
+
+OP_JUMP
+-------
+
+Moves the instruction pointer.
+
+OpCode: 0x17
+Operands:
+    - 0: The number of bytes to jump (high byte)
+    - 1: The number of bytes to jump (low byte)
