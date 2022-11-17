@@ -199,9 +199,19 @@ Operands:
 OP_JUMP
 -------
 
-Moves the instruction pointer.
+Moves the instruction pointer forward.
 
 OpCode: 0x17
 Operands:
     - 0: The number of bytes to jump (high byte)
     - 1: The number of bytes to jump (low byte)
+
+OP_JUMP
+-------
+
+Moves the instruction pointer backward.
+
+OpCode: 0x18
+Operands:
+    - 0: The number of bytes to jump back (high byte)
+    - 1: The number of bytes to jump back (low byte)
