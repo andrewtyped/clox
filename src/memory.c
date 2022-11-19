@@ -20,6 +20,9 @@ void* reallocate(void* pointer, size_t oldSize, size_t newSize) {
 
 void freeObject(Obj* object) {
     switch(object->type) {
+        case OBJ_CLOSURE: {
+            FREE(ObjClosure, object);
+        }
         case OBJ_NATIVE: {
             FREE(ObjNative, object);
             break;
