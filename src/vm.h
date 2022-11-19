@@ -3,26 +3,40 @@
 
 #include "chunk.h"
 #include "table.h"
+#include "object.h"
 #include "value.h"
+
+/**
+ * @brief The maximum depth of the call stack.
+ * 
+ */
+#define FRAMES_MAX 64
+
 
 /**
  * @brief Constant defining the max depth of a stack in VM. 
  * 
  */
-#define STACK_MAX 256
+#define STACK_MAX (FRAMES_MAX * UINT8_COUNT)
+
+typedef struct {
+    ObjFunction* function;
+    uint8_t* ip;
+    Value* slots;
+} CallFrame;
 
 typedef struct {
     /**
-     * @brief Pointer to the current chunk the VM is executing.
+     * @brief The call stack of functions
      * 
      */
-    Chunk* chunk;
+    CallFrame frames[FRAMES_MAX];
 
     /**
-     * @brief pointer to the NEXT instruction to execute.
+     * @brief The depth of the call stack;
      * 
      */
-    uint8_t* ip;
+    int frameCount;
 
     /**
      * @brief The stack of values currently in scope for the chunk.

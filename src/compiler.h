@@ -8,6 +8,6 @@
  * @brief Compiles lox source code to clox byte code.
  * 
  */
-bool compile(const char* source, Chunk* chunk);
+ObjFunction* compile(const char* source);
 
 #endif
