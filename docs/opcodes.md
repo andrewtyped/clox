@@ -215,3 +215,12 @@ OpCode: 0x18
 Operands:
     - 0: The number of bytes to jump back (high byte)
     - 1: The number of bytes to jump back (low byte)
+
+OP_CALL
+-------
+
+Calls a function.
+
+OpCode: 0x19
+Operands:
+    - 0: The number of arguments to the function.
