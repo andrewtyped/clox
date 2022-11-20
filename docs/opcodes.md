@@ -224,3 +224,41 @@ Calls a function.
 OpCode: 0x19
 Operands:
     - 0: The number of arguments to the function.
+
+OP_CLOSURE
+-------
+
+Defines a function.
+
+OpCode: 0x1A
+Operands:
+
+Variable. For each upvalue captured by the closure, emits two bytes:
+    - 0: 1 or 0. 1 if the variable is local to the enclosing function. 0 otherwise.
+    - 1: The local slot or upvalue index to capture.
+
+OP_GET_UPVALUE
+---------------
+
+Gets a variable from an enclosing scope
+
+OpCode: 0x1B
+Operands:
+    - 0: ???
+
+OP_SET_UPVALUE
+---------------
+
+Sets a variable from an enclosing scope
+
+OpCode: 0x1C
+Operands:
+    - 0: ???
+
+OP_CLOSE_UPVALUE
+---------------
+
+Hoists a closed variable onto the heap
+
+OpCode: 0x1D
+Operands: None

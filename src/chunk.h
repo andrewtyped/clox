@@ -34,7 +34,11 @@ typedef enum {
     OP_JUMP_IF_FALSE = 0x16,
     OP_JUMP = 0x17,
     OP_LOOP = 0x18,
-    OP_CALL = 0x19
+    OP_CALL = 0x19,
+    OP_CLOSURE = 0x1A,
+    OP_GET_UPVALUE = 0x1B,
+    OP_SET_UPVALUE = 0x1C,
+    OP_CLOSE_UPVALUE = 0x1D
 } OpCode;
 
 typedef struct {

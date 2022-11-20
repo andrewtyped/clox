@@ -20,7 +20,7 @@
 #define STACK_MAX (FRAMES_MAX * UINT8_COUNT)
 
 typedef struct {
-    ObjFunction* function;
+    ObjClosure* closure;
     uint8_t* ip;
     Value* slots;
 } CallFrame;
@@ -61,6 +61,12 @@ typedef struct {
      * 
      */
     Table strings;
+
+    /**
+     * @brief A list of closed values stored on the heap.
+     * 
+     */
+    ObjUpvalue* openUpvalues;
 
 /**
  * @brief Points to the head of a list containing all objects allocated in the program.
