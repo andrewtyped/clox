@@ -1,0 +1,9 @@
+var x = "x";
+
+//fun foo(a) {
+
+    print "start foo";
+    print "end foo";
+//} 
+
+//foo(1);

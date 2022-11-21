@@ -1,0 +1,27 @@
+var x = "x";
+
+fun foo(a, b, c) {
+
+    print "start foo";
+    while (a < 10) {
+        a = a + 1;
+        print a;
+    }
+    print "end foo";
+    
+} 
+
+foo(1,2,3);
+
+fun bar(text) {  
+    fun inner() {
+        print text;
+    }
+    
+    return inner;
+}
+
+var inner = bar("hello");
+inner();
+inner();
+inner();

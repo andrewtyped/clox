@@ -68,11 +68,28 @@ typedef struct {
      */
     ObjUpvalue* openUpvalues;
 
+    /**
+     * @brief The total number of bytes of managed memory allocated by the VM.
+     * 
+     */
+    size_t bytesAllocated;
+
+    /// @brief  Trigger garbage collection when bytesAllocated reaches this value.
+    size_t nextGC;
+
 /**
  * @brief Points to the head of a list containing all objects allocated in the program.
  * 
  */
     Obj* objects;
+
+    int grayCount;
+    int grayCapacity;
+    /**
+     * @brief The worklist garbage collection uses to determine which objects cannot be freed.
+     * 
+     */
+    Obj** grayStack;
 } VM;
 
 /**
