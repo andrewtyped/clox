@@ -112,7 +112,7 @@ void markValue(Value value) {
 }
 
 static void markArray(ValueArray* array) {
-    for (int i = 0; i > array->count; i++) {
+    for (int i = 0; i < array->count; i++) {
         markValue(array->values[i]);
     }
 }
@@ -162,6 +162,7 @@ static void markRoots() {
     }
 
     markTable(&vm.globals);
+    markCompilerRoots();
 }
 
 static void traceReferences() {
