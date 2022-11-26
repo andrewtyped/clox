@@ -9,7 +9,7 @@ set(CMAKE_BUILD_TYPE Debug)
 project(clox C)
 
 #-O sets optimization level - use O3 for full optimization, O0 for none
-set(CMAKE_C_FLAGS "-Wall -Werror -O0 -g -DUNITY_INCLUDE_DOUBLE ")
+set(CMAKE_C_FLAGS "-Wall -Werror -O3 -g -DUNITY_INCLUDE_DOUBLE ")
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY 
     ${CMAKE_BINARY_DIR}/lib)

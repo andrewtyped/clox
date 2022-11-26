@@ -20,7 +20,10 @@ void freeTable(Table* table) {
 }
 
 static Entry* findEntry(Entry* entries, int capacity, ObjString* key) {
-    uint32_t index = key->hash % capacity;
+    //Optimization - We were using modulo here to ensure index fits in the array bounds. Modulo is 30-50x slower than addition on x86.
+    //We **know** capacity is a power of two, so we can optimize - modulo in this case is equivalent to bitwise &, after subtracting one from
+    //the second operand. Subtracting 1 from a power of 2 turns all lower bits to 1.
+    uint32_t index = key->hash & (capacity - 1);
     Entry* tombstone = NULL;
 
     for(;;) {
@@ -40,7 +43,7 @@ static Entry* findEntry(Entry* entries, int capacity, ObjString* key) {
             return entry;
         }
 
-        index = (index + 1) % capacity;
+        index = (index + 1) & (capacity - 1);
     }
 }
 
@@ -138,7 +141,7 @@ ObjString* tableFindString(Table* table, const char* chars, int length, uint32_t
         return NULL;
     }
 
-    uint32_t index = hash % table->capacity;
+    uint32_t index = hash & (table->capacity - 1);
     for(;;) {
         Entry* entry = &table->entries[index];
         if (entry->key == NULL) {
@@ -153,7 +156,7 @@ ObjString* tableFindString(Table* table, const char* chars, int length, uint32_t
             return entry->key;
         }
 
-        index = (index + 1) % table->capacity;
+        index = (index + 1) & (table->capacity - 1);
 
     }
 }

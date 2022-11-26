@@ -8,6 +8,7 @@
 #define UINT8_MAX_VALUE 256
 #define UINT8_COUNT (UINT8_MAX + 1)
 
+#define NAN_BOXING
 #define DEBUG_STRESS_GC
 #define DEBUG_LOG_GC
 #define DEBUG_PRINT_CODE
