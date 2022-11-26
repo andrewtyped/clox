@@ -1,0 +1,16 @@
+fun there() { return 1; }
+
+fun be() { return 2; }
+
+fun massive() { return 3; }
+
+fun fuckery() { return 4; }
+
+fun afoot() { return 5; }
+
+var a = there();
+var b = be();
+var c = fuckery();
+var d = afoot();
+
+print a + b + c + d;

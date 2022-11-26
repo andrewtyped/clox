@@ -21,6 +21,8 @@ fun bar(text) {
     return inner;
 }
 
+//There is some sort of bug in this program that only arises when Garbage colleciton is enabled.
+//Segmentation fault on disassembling after compiling either bar or inner.
 var inner = bar("hello");
 inner();
 inner();
