@@ -262,3 +262,30 @@ Hoists a closed variable onto the heap
 
 OpCode: 0x1D
 Operands: None
+
+OP_CLASS
+--------
+
+Allocates memory for a new class and pushes the class onto the stack.
+
+OpCode: 0x1E
+Operands:
+    - 0: The index of the constant containing the class's name.
+
+OP_SET_PROPERTY
+---------------
+
+Assigns the value of a property in a class instance.
+
+OpCode: 0x1F
+Operands:
+    - 0: The index of the constant hosting the property's name.
+
+OP_GET_PROPERTY
+---------------
+
+Retrieves the value of a property in a class instance.
+
+OpCode: 0x20
+Operands:
+    - 0: The index of the constant hosting the property's name.
