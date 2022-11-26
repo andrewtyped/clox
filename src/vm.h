@@ -63,6 +63,12 @@ typedef struct {
     Table strings;
 
     /**
+     * @brief The method name used to initialize new instances of classes - init.
+     * 
+     */
+    ObjString* initString;
+
+    /**
      * @brief A list of closed values stored on the heap.
      * 
      */

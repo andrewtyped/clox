@@ -289,3 +289,48 @@ Retrieves the value of a property in a class instance.
 OpCode: 0x20
 Operands:
     - 0: The index of the constant hosting the property's name.
+
+OP_METHOD
+---------
+
+Adds a new method to a class.
+
+OpCode: 0x21
+Operands:
+    - 0: The index of the constant hosting the method's name.
+
+OP_INVOKE
+---------
+
+Optimized method invocation - immediately invoke a method after its name is accessed through its instance using the '.' operator.
+
+OpCode: 0x22
+Operands:
+    - 0: The index of the constant hosting the method's name.
+    - 1: The number of arguments to the method.
+
+OP_INHERIT
+----------
+
+Make a superclass's methods and fields available to a subclass.
+
+OpCode: 0x23
+Operands: None
+
+OP_GET_SUPER
+----------
+
+Get a member defined in a superclass
+
+OpCode: 0x24
+Operands: The index of the constant hosting the name of the superclass's member.
+
+OP_INVOKE
+---------
+
+Optimized superclass method invocation - immediately invoke a method after its name is accessed through its instance using the '.' operator.
+
+OpCode: 0x25
+Operands:
+    - 0: The index of the constant hosting the method's name.
+    - 1: The number of arguments to the method.
